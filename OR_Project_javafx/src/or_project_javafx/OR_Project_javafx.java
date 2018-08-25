@@ -28,61 +28,15 @@ import javafx.stage.Stage;
 public class OR_Project_javafx extends Application {
     
     @Override
-    public void start(Stage primaryStage) {  
-        //Create Scenes
-        Scene dijkstraScene;
-        Scene floydScene;
-        
-        //configure primary stage
-        primaryStage.setTitle("OR Project Group _");
-        primaryStage.setMinHeight(500);
-        primaryStage.setMinWidth(500);
-       
-        
-        //Dijkstra Scene
-        Label labelDijkstra = new Label("Dijkstra scene");
-        Button backButtonDijkstra = new Button("back");
-        VBox dijkstraRoot = new VBox();
-        HBox backPaneDijkstra = new HBox();
-        VBox dijkstraPane = new VBox();
-        backPaneDijkstra.getChildren().add(backButtonDijkstra);
-        dijkstraPane.getChildren().add(labelDijkstra);
-        dijkstraPane.setAlignment(Pos.CENTER);
-        backPaneDijkstra.setPadding(new Insets(20, 0, 0, 20));
-        dijkstraRoot.getChildren().addAll(backPaneDijkstra, dijkstraPane);
-        dijkstraScene = new Scene(dijkstraRoot);
-        
-        //Floyd Scene
-        Label labelFloyd = new Label("Floyd scene");
-        Button backButtonFloyd = new Button("back");
-        VBox floydRoot = new VBox();
-        HBox backPaneFloyd = new HBox();
-        VBox floydPane = new VBox();
-        backPaneFloyd.getChildren().add(backButtonFloyd);
-        floydPane.getChildren().add(labelFloyd);
-        floydPane.setAlignment(Pos.CENTER);
-        backPaneFloyd.setPadding(new Insets(20, 0, 0, 20));
-        floydRoot.getChildren().addAll(backPaneFloyd, floydPane);
-        floydScene = new Scene(floydRoot);
-        
-        //Main Scene
-        
+    public void start(Stage primaryStage) {
         Button dijkstraBtn = new Button("Dijkstra Algorithm");
         Button floydBtn = new Button("Floyd Algorithm");
         Button backBtn = new Button("back");
         Label algoLabel = new Label("Select an Algorithm: ");
         
-        floydBtn.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                primaryStage.setScene(floydScene);
-            }
-        });
-        
-        dijkstraBtn.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                primaryStage.setScene(dijkstraScene);
-            }
-        });
+        primaryStage.setTitle("OR Project Group _");
+        primaryStage.setMinHeight(500);
+        primaryStage.setMinWidth(500);
         
         VBox root = new VBox();
         
@@ -100,6 +54,7 @@ public class OR_Project_javafx extends Application {
         
         root.getChildren().addAll(hBox, vBox);
         Scene myScene = new Scene(root);
+        
         primaryStage.setScene(myScene);
         
         primaryStage.show();
