@@ -32,6 +32,8 @@ public class OR_Project_javafx extends Application {
         //Create Scenes
         Scene dijkstraScene;
         Scene floydScene;
+        VBox root = new VBox();
+        Scene myScene = new Scene(root);
         
         //configure primary stage
         primaryStage.setTitle("OR Project Group _");
@@ -52,6 +54,12 @@ public class OR_Project_javafx extends Application {
         dijkstraRoot.getChildren().addAll(backPaneDijkstra, dijkstraPane);
         dijkstraScene = new Scene(dijkstraRoot);
         
+        backButtonDijkstra.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                primaryStage.setScene(myScene);
+            }
+        });
+        
         //Floyd Scene
         Label labelFloyd = new Label("Floyd scene");
         Button backButtonFloyd = new Button("back");
@@ -64,6 +72,12 @@ public class OR_Project_javafx extends Application {
         backPaneFloyd.setPadding(new Insets(20, 0, 0, 20));
         floydRoot.getChildren().addAll(backPaneFloyd, floydPane);
         floydScene = new Scene(floydRoot);
+        
+        backButtonFloyd.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                primaryStage.setScene(myScene);
+            }
+        });
         
         //Main Scene
         
@@ -84,7 +98,7 @@ public class OR_Project_javafx extends Application {
             }
         });
         
-        VBox root = new VBox();
+        
         
         HBox hBox = new HBox();
         hBox.setPadding(new Insets(20, 0, 0, 20));
@@ -99,7 +113,7 @@ public class OR_Project_javafx extends Application {
         vBox.getChildren().addAll(algoLabel, dijkstraBtn, floydBtn);
         
         root.getChildren().addAll(hBox, vBox);
-        Scene myScene = new Scene(root);
+        
         primaryStage.setScene(myScene);
         
         primaryStage.show();
